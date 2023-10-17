@@ -216,10 +216,6 @@ sub{
 nav{
     position: sticky;
 }
-footer{
-    
-}
-
 @media screen and (max-width:768px) {
 
     .optionToggleButton{
