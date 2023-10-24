@@ -25,7 +25,7 @@ function lineBegin(event){
     canvas.beginPath();
     canvas.moveTo(clientX,clientY);
     canvas.lineWidth=4;
-    canvas.strokeStyle="blue";
+    canvas.strokeStyle=drawingColor;
 }
 function lineClose(event){
     let {clientX,clientY} =event;
@@ -72,7 +72,7 @@ function pencilBegin(event){
     previousPossion =[event.clientX,event.clientY];
    theCanvas.addEventListener("mousemove",pencilMove);
    theCanvas.addEventListener("mouseup",pencilClose);
-   canvas.strokeStyle="blue";
+   canvas.strokeStyle = drawingColor;
    canvas.lineWidth=2;
 }
 function pencilMove(event){
@@ -142,3 +142,14 @@ function lockingAll(){
     
 }
 lock.addEventListener("click",lockingAll);
+
+
+// color change
+function colorchangingAgain(){
+    drawingColor =colorPeker.value;
+    console.log("hi");
+}
+const colorPeker =document.getElementById("colorPeker");
+let drawingColor ="blue";
+colorPeker.addEventListener("change",colorchangingAgain);
+
