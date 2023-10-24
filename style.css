@@ -23,7 +23,9 @@ canvas{
     border: none;
     color: #5a5a5d;
     background-color: transparent;
+    
 }
+.mid
 .sizeIncreasing:hover{
     background-color: #e8e8e8;
 }
@@ -55,6 +57,14 @@ canvas{
 .sizeOfLibrary:hover{
     background-color: #e8e8e8;
 }
+#colorPeker{
+    margin-top: 6px;
+}
+.middleOptions{
+    box-shadow: 1px 2px 4px #e5e6e7;
+    padding: 2px 4px;
+    box-sizing: border-box;
+}
 .top{
     display: flex;
     justify-content: space-between;
@@ -65,6 +75,7 @@ canvas{
     position: absolute;
     z-index: 5;
     padding: 10px 15px;
+    margin-top: 10px;
 }
 .zomeInButton{
     display: flex;
