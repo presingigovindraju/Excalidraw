@@ -11,6 +11,10 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -18,139 +22,81 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="toChangeTotalBackground">
-    <nav>
-      <div class="frontViewTopOptions">
-        <div class="optionToggleButton hoverChanging">
+  <body>
+    <div class="root">
+      <div class="top">
+        <button class="menuButton sizeIncreasing">
           <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="middleOptions">
+          <button id="lockButton" class="sizeIncreasing">
+            <i class="fa-solid fa-lock"></i>
+          </button>
+          <button class="handButton sizeIncreasing">
+            <i class="fa-regular fa-hand"></i>
+          </button>
+          <button class="arrowButton sizeIncreasing">
+            <i class="fa-solid fa-arrow-pointer"></i>
+          </button>
+          <button class="squareButton sizeIncreasing">
+            <i class="fa-regular fa-square"></i>
+          </button>
+          <button class="daimondButton sizeIncreasing">
+            <i class="fa-solid fa-diamond"></i>
+          </button>
+          <button class="circleButton sizeIncreasing">
+            <i class="fa-regular fa-circle"></i>
+          </button>
+          <button class="arrowButton sizeIncreasing">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button class="sizeIncreasing" id="lineButton">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <button id="pencilButton" class="sizeIncreasing">
+            <i class="fa-solid fa-pencil"></i>
+          </button>
+          <button class="lettarButton sizeIncreasing">
+            <i class="fa-solid fa-a"></i>
+          </button>
+          <button class="imageButton sizeIncreasing">
+            <i class="fa-solid fa-image"></i>
+          </button>
+          <button class="eraserButton sizeIncreasing">
+            <i class="fa-solid fa-eraser"></i>
+          </button>
+          <input type="color">
         </div>
 
-        <div class="toolsOne">
-          <div class="boxOfTools hoverChanging">
-            <i class="fa-solid fa-lock-open"></i>
-          </div>
-          <div class="thinLine"></div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-regular fa-hand"></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-arrow-pointer"><sub>1</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-regular fa-square"><sub>2</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-diamond"><sub>3</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-regular fa-circle"><sub>4</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-arrow-right"><sub>5</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-minus"><sub>6</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-pencil"><sub>7</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-a"><sub>8</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-regular fa-image"><sub>9</sub></i>
-          </div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-eraser"><sub>0</sub></i>
-          </div>
-          <div class="thinLine"></div>
-          <div class="boxOfTools hoverChanging">
-            <i class="symboleColor fa-solid fa-shapes"></i>
-          </div>
-        </div>
-        <div class="profileLibrary">
-          <div class="profile profileHovering">
-            <i class="fa-regular fa-user" style="color: #f0f2f4"></i>
-          </div>
-          <div class="Library hoverChanging">
-            <i class="symboleColor fa-solid fa-book-open"></i>Library
-          </div>
+        <div class="topLastTwoButtons">
+          <button class="profileButton sizeIncreasing">
+            <i class="fa-regular fa-user"></i>
+          </button>
+          <button class="libraryButton sizeOfLibrary">
+            <i class="fa-solid fa-book-open"></i><pre> </pre>Library
+          </button>
         </div>
       </div>
-    </nav>
-
-    <body>
-      <div class="middleWritten">
-        <h6>
-          To move canvas, hold mouse wheel or spacebar while dragging, or use
-          the hand tool
-        </h6>
-      </div>
-
-      <div class="logoName">
-        <img
-          class="logoImageSizing"
-          src="https://imrahulsrivastava.github.io/F2-Oct-Excalidraw-Clone-Project/Images/apple-touch-icon.png"
-          alt="logo_one"
-        />
-        <h1 class="mainHeadingExcalidraw">EXCALIDRAW</h1>
-      </div>
-
-      <div class="middleOptions">
+      <canvas id="canvasDrawing"></canvas>
+      <div class="bottom">
+        <div class="zomeAndUndoButtons">
+          <div  class="zomeInButton">
+            <button class="sizeIncreasing"><i class="fa-solid fa-minus"></i></button>
+            <div class="percentageNumber sizeIncreasing">100%</div>
+            <button class="sizeIncreasing"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div>
+            <button class="sizeIncreasing"><i class="fa-solid fa-rotate-left"></i></button>
+            <button class="sizeIncreasing"><i class="fa-solid fa-rotate-right"></i></button>
+          </div>
+        </div>
         <div>
-          <div class="openFiles boxMakingForMiddle hoverChanging">
-            <div class="miniGap"><i class="fa-regular fa-folder"></i> Open</div>
-            <div>Ctrl+O</div>
-          </div>
-          <div class="openFiles boxMakingForMiddle hoverChanging">
-            <div class="miniGap">
-              <i class="fa-regular fa-circle-question"></i> Help
-            </div>
-            <div>?</div>
-          </div>
-          <div class="boxMakingForMiddle miniGap hoverChanging">
-            <i class="fa-regular fa-user"></i> Live collaboration...
-          </div>
-          <div class="boxMakingForMiddle miniGap hoverChanging">
-            <i class="fa-solid fa-gift"></i> Try Excalidraw Plus!
-          </div>
+          <button class="safeButton sizeIncreasing"><i class="fa-solid fa-shield"></i></button>
+          <button class="questionButton sizeIncreasing"><i class="fa-regular fa-circle-question"></i></button>
         </div>
       </div>
-    </body>
-
-    <footer>
-      <div class="lastZomeInAndSecurityLine">
-        <div class="firstHalfOfZome">
-          <div class="zomeInZomeOut">
-            <div class="boxForPlusAndmainus hoverChanging">
-              <i class="fa-solid fa-minus"></i>
-            </div>
-            <div class="thinLineInZome"></div>
-            <div class="boxForPlusAndmainusMiddle hoverChanging">100%</div>
-            <div class="thinLineInZome"></div>
-            <div class="boxForPlusAndmainus hoverChanging">
-              <i class="fa-solid fa-plus"></i>
-            </div>
-          </div>
-          <div class="undoRedo">
-            <div class="boxForPlusAndmainus arrowDirection hoverChanging">
-              <i class="fa-solid fa-arrow-rotate-left"></i>
-            </div>
-            <div class="thinLineInZome"></div>
-            <div class="arrowDirection boxForPlusAndmainus hoverChanging">
-              <i class="fa-solid fa-arrow-rotate-right"></i>
-            </div>
-          </div>
-        </div>
-        <div class="securityAndQuestion">
-          <div class="securitySymbol">
-            <i class="fa-solid fa-shield-halved" style="color: #83b7fb"></i>
-          </div>
-          <div class="questionMarkBox hoverChanging">
-            <i class="fa-regular fa-circle-question"></i>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>
