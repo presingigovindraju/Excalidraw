@@ -65,7 +65,7 @@ const pencil = document.getElementById("pencilButton");
 let isPencilActive = false;
 let ifpencilIsOn = false;
 
-
+let initialPosition = null;
 
 let previousPossion =null;
 function pencilBegin(event){
@@ -74,6 +74,11 @@ function pencilBegin(event){
    theCanvas.addEventListener("mouseup",pencilClose);
    canvas.strokeStyle = drawingColor;
    canvas.lineWidth=2;
+//    
+if(!(actions.circle || actions.rectangle  || actions.eraser )){
+    return;
+}
+initialPosition = {x : event.clientX,y:event.clientY};
 }
 function pencilMove(event){
     let currentPossion =[event.clientX,event.clientY];
@@ -81,11 +86,14 @@ function pencilMove(event){
     canvas.moveTo(...previousPossion);
     canvas.lineTo(...currentPossion);
     canvas.stroke();
+    canvas.closePath();
     previousPossion = currentPossion;
 }
 function pencilClose(event){
-    canvas.closePath();
     theCanvas.removeEventListener("mousemove",pencilMove);
+    theCanvas.removeEventListener("mouseup",pencilClose);
+    drawingHistory.push(canvas.getImageData(0,0,theCanvas.width,theCanvas.height));
+    pathCount++;
 }
 
 function onThePencil(){
@@ -95,7 +103,7 @@ function onThePencil(){
     if(isPencilActive){
         theCanvas.addEventListener("mousedown",pencilBegin);
     }else{
-        theCanvas.addEventListener("mousedown",pencilBegin);
+        theCanvas.removeEventListener("mousedown",pencilBegin);
     }
 
     ifLineIsOn = !ifLineIsOn;
@@ -144,12 +152,22 @@ function lockingAll(){
 lock.addEventListener("click",lockingAll);
 
 
+// clear ALL
+const clear = document.querySelector("#clear");
+clear.addEventListener("click",clearAll);
+function clearAll(){
+    canvas.clearRect(0,0,theCanvas.width,theCanvas.height);
+}
+
+
+
 // color change
 function colorchangingAgain(){
     drawingColor =colorPeker.value;
-    console.log("hi");
 }
 const colorPeker =document.getElementById("colorPeker");
 let drawingColor ="blue";
 colorPeker.addEventListener("change",colorchangingAgain);
+
+
 

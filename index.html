@@ -30,7 +30,7 @@
           <i class="fa-solid fa-bars"></i>
         </button>
 
-        <div class="middleOptions">
+        <div class="middleOptions options" id="actionButtons">
           <button id="lockButton" class="sizeIncreasing">
             <i class="fa-solid fa-lock"></i>
           </button>
@@ -40,13 +40,13 @@
           <button class="arrowButton sizeIncreasing">
             <i class="fa-solid fa-arrow-pointer"></i>
           </button>
-          <button class="squareButton sizeIncreasing">
+          <button id="rectangle"  class="btn squareButton sizeIncreasing" onclick="onActionClick(this)">
             <i class="fa-regular fa-square"></i>
           </button>
           <button class="daimondButton sizeIncreasing">
             <i class="fa-solid fa-diamond"></i>
           </button>
-          <button class="circleButton sizeIncreasing">
+          <button id="circle"  class="btn circleButton sizeIncreasing" onclick="onActionClick(this)">
             <i class="fa-regular fa-circle"></i>
           </button>
           <button class="arrowButton sizeIncreasing">
@@ -64,10 +64,11 @@
           <button class="imageButton sizeIncreasing">
             <i class="fa-solid fa-image"></i>
           </button>
-          <button class="eraserButton sizeIncreasing">
+          <button id="eraser"  class="btn eraserButton sizeIncreasing" onclick="onActionClick(this)">
             <i class="fa-solid fa-eraser"></i>
           </button>
           <input id="colorPeker" type="color">
+          <button id="clear"><i class="fa-solid fa-broom"></i></button>
         </div>
 
         <div class="topLastTwoButtons">
@@ -88,8 +89,8 @@
             <button class="sizeIncreasing"><i class="fa-solid fa-plus"></i></button>
           </div>
           <div>
-            <button class="sizeIncreasing"><i class="fa-solid fa-rotate-left"></i></button>
-            <button class="sizeIncreasing"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="undo" class="sizeIncreasing"><i class="fa-solid fa-rotate-left"></i></button>
+            <button id="redo" class="sizeIncreasing"><i class="fa-solid fa-rotate-right"></i></button>
           </div>
         </div>
         <div>
@@ -99,5 +100,6 @@
       </div>
     </div>
     <script src="./script.js"></script>
+    <script src="./undoredo.js"></script>
   </body>
 </html>
